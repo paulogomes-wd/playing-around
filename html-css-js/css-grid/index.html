@@ -12,9 +12,17 @@
         text-align: center;
       }
       .content {
+        display: grid;
         grid-gap: 10px;
         max-width: 960px;
         margin: 0 auto;
+      }
+      .content div{
+        background: #3bbced;
+        padding: 30px;
+      }
+      .content div:nth-child(even){
+        background: #777;
       }
       #lesson-2-and-3{
         display: none;
@@ -28,25 +36,28 @@
         grid-column-gap: 10px;*/
       }
       #lesson-4{
-        display: grid;
+        display: none;
+        /*display: grid;*/
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(4, minmax(150px, auto));
-        grid-gap: 10px;
-        max-width: 960px;
-        margin: 0 auto;
       }
-      #lesson-2-and-3, #lesson-4 div{
-        background: #3bbced;
-        padding: 30px;
+      #lesson-5{
+        display: none;
+        grid-template-columns: repeat(3, 1fr);
       }
-      #lesson-2-and-3, #lesson-4 div:nth-child(even){
-        background: #777;
+      #lesson-6{
+        display: none;
+        /*display: grid;*/
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(150px, auto);
+        /*align-items: stretch;
+        justify-items: start;*/
       }
     </style>
   </head>
   <body>
     <p style="text-align: center;"><a href="../">Home</a></p>
-    <div id="lesson-2-and-3">
+    <div id="lesson-2-and-3" class="content">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -83,13 +94,118 @@
         grid-column: 1/3;
       }
     </style>
-    <div id="lesson-4">
+    <div id="lesson-4" class="content">
       <div class="one">1</div>
       <div class="two">2</div>
       <div class="three">3</div>
       <div class="four">4</div>
       <div class="five">5</div>
       <div class="six">6</div>
+    </div>
+    
+    <style>
+      .nested{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-column: span 3;
+      }
+      .nested p {
+        border: 1px solid #fff;
+        padding: 20px;
+        margin: 0;
+      }
+    </style>
+    <div id="lesson-5" class="content">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="nested">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+      </div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+    <div id="lesson-6" class="content">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+    <style>
+      .content>*{
+        background: #3bbced;
+        padding: 30px;
+      }
+
+      #lesson-7{
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        position: relative;
+        grid-gap: 10px;
+      }
+      header{
+        grid-column: 1/13;
+      }
+      main{
+        grid-column: 4/13;
+        grid-row: 2/4;
+      }
+      aside{
+        grid-column: 1/4;
+      }
+      section{
+        grid-column: 1/13;
+        grid-row: 4/6;
+      }
+      nav {
+        grid-column: 1/4;
+      }
+      footer{
+        grid-column: 1/13;
+      }
+      #grid{
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100%, auto);
+        background: transparent;
+        position: absolute;
+        display: grid;
+        display: none;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        left: 0;
+        top: 0;
+      }
+      #grid p{
+        background: #000;
+        border: 1px solid;
+        opacity: 0.2;
+        margin: 0;
+      }
+      input:checked + .content #grid{
+        display: grid;
+      }
+    </style>
+    <input type="checkbox" />
+    <div id="lesson-7" class="content">
+      <div id="grid">
+        <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+      </div>
+
+		  <header>Header</header>
+      <main>Main</main>
+      <section>Section</section>
+      <aside>Aside</aside>
+      <nav>Nav</nav>
+      <footer>Footer</footer>
     </div>
   </body>
 </html>

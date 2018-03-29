@@ -29,3 +29,12 @@ The Net Ninja (Channel)
 
 * Grid Lines
 --> My perspective: Used to define (statically) the exact location of an element inside the grid
+
+* Nesting grids
+--> The same "logic" used to create the parent grid and so one
+
+* The span "behavior"
+--> grid-column: span X; /* It means: take the grid from its default start point plus X column(s)*/
+
+* Aligning and Justifying Items
+--> "align-items" or "align-self" are used to orgarnize vertically and "justify-items" or "justify-self" are used to organize horizontally
