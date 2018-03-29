@@ -8,6 +8,8 @@ Youtube
 The Net Ninja (Channel)
 
 ### Summary
+* My humble opinion: CSS Grid is simply awesome and very very useful (specially grid areas)
+
 * My perspective: CSS Grid is a way of slicing the screen into blocks throw the definition of columns and rows
 
 * To "say" to the browser that we are using the CSS Grid system we "just" need to do --> " container-selector { display: grid; }"
@@ -38,3 +40,9 @@ The Net Ninja (Channel)
 
 * Aligning and Justifying Items
 --> "align-items" or "align-self" are used to orgarnize vertically and "justify-items" or "justify-self" are used to organize horizontally
+
+* Grid Areas
+--> "grid-area: area-alias" allows us to define grid areas and define its positions so we can use it at the "grid-template-areas" property
+* grid-template-areas: " ............. " (It is basically used as a "bitmap")
+
+* The lessons 9 and 10 give greats examples of implementing/using grid areas (amazing course)
